@@ -8,10 +8,10 @@ if (process.env.DATABASE_URL) {
 } else {
   // Desarrollo local (usa host, usuario, etc.)
   pool = mysql.createPool({
-    host: process.env.DB_HOST || "mysql.railway.internal",
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASS || "gcNOBkYSIQgJyrAuCpVsNlzTxDIphbjM",
-    database: process.env.DB_NAME || "gestion_tenis",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
