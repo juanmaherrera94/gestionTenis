@@ -10,7 +10,7 @@ router.post("/login", async (req, res) => {
 
   try {
     const [results] = await db.query(query, [usuario, password]);
-
+    console.log(results);
     if (results.length === 0) {
       return res.status(401).json({ error: "Usuario o contraseña incorrectos" });
     }
