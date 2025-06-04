@@ -7,7 +7,7 @@ const port = process.env.PORT || 4000
 
 // Configuración de CORS para permitir solicitudes desde localhost:5173 (tu frontend Vue)
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://gestiontenis-1.onrender.com"],
+  origin: ["http://localhost:5173", "https://gestiontenis.onrender.com"],
   methods: "*",              // Permite todos los métodos
   allowedHeaders: "*",       // Permite todos los headers
   credentials: true          // Si necesitas cookies o headers de autenticación
