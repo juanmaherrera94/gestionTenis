@@ -30,7 +30,7 @@
   
   const obtenerEmparejamientos = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/emparejamientos")
+      const res = await fetch("https://gestiontenis-1.onrender.com/api/emparejamientos")
       const data = await res.json()
       emparejamientos.value = data
     } catch (err) {

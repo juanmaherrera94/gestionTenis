@@ -55,7 +55,7 @@ const agregarJugador = async () => {
   }
 
   try {
-    await axios.post("http://localhost:3000/api/jugadores", {
+    await axios.post("https://gestiontenis-1.onrender.com/api/jugadores", {
       nombre: nombre.value,
       usuario: usuario.value,
       password: password.value,

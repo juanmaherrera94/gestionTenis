@@ -140,7 +140,7 @@ onMounted(async () => {
 
 const mostrarReservas = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/api/reservas");
+    const response = await axios.get("https://gestiontenis-1.onrender.com/api/reservas");
     reservas.value = response.data;
   } catch (error) {
     toast.error("Error al cargar reservas: " + error.message);
@@ -166,7 +166,7 @@ const guardarDisponibilidad = async () => {
     return;
   }
   try {
-    await axios.post("http://localhost:3000/api/reservas", {
+    await axios.post("https://gestiontenis-1.onrender.com/api/reservas", {
       dia: diaSeleccionado.value,
       hora: horarioSeleccionado.value,
       usuario_id: parseInt(userId, 10),
@@ -205,7 +205,7 @@ const cambiarContrasena = async () => {
     return;
   }
   try {
-    await axios.put(`http://localhost:3000/api/usuarios/${userId}/contrasena`, {
+    await axios.put(`https://gestiontenis-1.onrender.com/api/usuarios/${userId}/contrasena`, {
       actual: contrasenaActual.value,
       nueva: nuevaContrasena.value,
     });
@@ -289,9 +289,7 @@ h1:hover {
   margin-bottom: 20px;
 }
 
-.reservations-table-card {
- /* Estilos específicos si son necesarios, hereda de .content-card */
-}
+
 
 /* ESTILOS MODIFICADOS PARA EL CONTENEDOR DEL HORARIO Y LA TABLA */
 .placeholder-nuevo-horario { /* Contenedor de la sección de horarios */
