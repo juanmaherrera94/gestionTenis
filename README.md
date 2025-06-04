@@ -1,35 +1,58 @@
-# tenis
+# Backend Gestión Tenis 🎾
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto es el servidor backend de una aplicación de gestión de reservas, usuarios y emparejamientos para un club de tenis. Está desarrollado en **Node.js** usando el framework **Express.js**, y se conecta a una base de datos **MySQL**.
 
-## Recommended IDE Setup
+## 🚀 Tecnologías utilizadas
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Node.js](https://nodejs.org/) – Entorno de ejecución de JavaScript en el servidor.
+- [Express.js](https://expressjs.com/) – Framework minimalista para gestionar rutas y middlewares.
+- [MySQL](https://www.mysql.com/) – Sistema de gestión de bases de datos relacional.
+- [mysql2/promise](https://www.npmjs.com/package/mysql2) – Cliente MySQL compatible con promesas.
+- [dotenv](https://www.npmjs.com/package/dotenv) – Gestión de variables de entorno.
+- [CORS](https://www.npmjs.com/package/cors) – Middleware para habilitar el uso compartido de recursos entre orígenes distintos.
 
-## Customize configuration
+## 📁 Estructura del proyecto
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```
+/routes           → Rutas de la API (usuarios, emparejamientos, reservas, etc.)
+/db.js            → Configuración de la conexión a la base de datos
+/server.js        → Archivo principal del servidor
+.env              → Variables de entorno (no subir a producción)
 ```
 
-### Compile and Hot-Reload for Development
+## 🔧 Configuración
 
-```sh
-npm run dev
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+
+```env
+PORT=4000
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=
+DB_NAME=gestion_tenis
+DATABASE_URL=mysql://root:<tu_password>@<tu_host>:<puerto>/<nombre_base_datos>
 ```
 
-### Compile and Minify for Production
+> En Railway o Render, solo necesitas definir `DATABASE_URL` con la conexión completa.
 
-```sh
-npm run build
+## ▶️ Scripts
+
+```bash
+npm install        # Instala las dependencias
+npm run dev        # Arranca el servidor con nodemon (modo desarrollo)
+npm start          # Inicia el servidor en producción
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## 📡 API disponible
 
-```sh
-npm run test:unit
-```
+Todas las rutas están bajo el prefijo `/api`. Ejemplos:
+
+- `POST /api/usuarios/login`
+- `PUT /api/usuarios/:id/contrasena`
+- `GET /api/reservas`
+- `POST /api/emparejamientos`
+- etc.
+
+## 🌐 Despliegue
+
+Este backend puede desplegarse en plataformas como **Railway** o **Render**. Solo asegúrate de tener correctamente configurada la variable `DATABASE_URL`.
