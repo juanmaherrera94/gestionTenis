@@ -1,22 +1,12 @@
 <template>
   <div class="contenedor">
-    <!-- Sección de login -->
     <section id="login" class="seccion">
       <form @submit.prevent="login" class="formulario">
         <h1>Iniciar Sesión</h1>
         <input type="text" placeholder="Usuario" v-model="username" />
         <input type="password" placeholder="Contraseña" v-model="password" />
-        <button type="submit">Login</button>
-
-        <p class="registro-link">
-          ¿No tienes cuenta?
-          <a href="#registro" class="flecha">⬇</a>
-        </p>
+        <button type="submit">Entrar</button>
       </form>
-    </section>
-
-    <!-- Sección de registro -->
-    <section id="registro" class="seccion">
       <form @submit.prevent="registrar" class="formulario">
         <h1>¡Regístrate aquí!</h1>
 
@@ -39,6 +29,8 @@
         <button type="submit">Registrar</button>
       </form>
     </section>
+
+    
   </div>
 </template>
 
@@ -114,7 +106,9 @@ const registrar = async () => {
 
 <style scoped>
 
+
 .contenedor {
+  background-image: url("@/assets/fondoTenis.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -132,6 +126,8 @@ const registrar = async () => {
   min-height: 100vh;
   padding: 2rem 1rem;
   box-sizing: border-box;
+  gap: 2rem; /* <--- AÑADIDO: Espacio entre los formularios */
+  flex-wrap: wrap; /* <--- AÑADIDO: Permite que se apilen en pantallas pequeñas */
 }
 
 .formulario {
@@ -154,10 +150,7 @@ h1 {
   text-align: center;
 }
 
-h1:hover {
-  color: red;
-  cursor: pointer;
-}
+
 
 input {
   display: block;
@@ -216,6 +209,20 @@ input:focus {
 
 .registro-link .flecha:hover {
   color: #0056b3;
+}
+
+@media (max-width: 920px) { /* Ajustado para que el wrap ocurra antes */
+  .seccion {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .formulario {
+    min-width: 100%;
+    max-width: 450px; /* Un poco más de ancho en tabletas */
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {

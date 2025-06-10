@@ -343,10 +343,7 @@ h1 {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-h1:hover { /* Este estilo :hover en un h1 es un poco inusual, pero lo mantengo si lo quieres */
-  color: red;
-  cursor: pointer;
-}
+
 .vista-usuario-contenedor {
   display: flex;
   flex-direction: column;
@@ -381,7 +378,7 @@ h1:hover { /* Este estilo :hover en un h1 es un poco inusual, pero lo mantengo s
 }
 .password-toggle-link {
   /* color: white;  Esto probablemente no se vea bien si el fondo no es oscuro */
-  color: #0056b3; /* Ejemplo de color de enlace */
+  color: white; /* Ejemplo de color de enlace */
   text-decoration: underline;
   cursor: pointer;
   font-weight: 500;

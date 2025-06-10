@@ -16,7 +16,7 @@
         <p class="para"><strong>{{ jugador.nombre }}</strong></p>
         <p class="para">Usuario: {{ jugador.usuario }}</p>
         <p class="para">Contraseña: {{ jugador.password }}</p>
-        <p class="para">División ID: {{ jugador.division_id }}</p>
+        <p class="para">División {{ jugador.division_id }}</p>
         <div class="btn-actions">
           <button class="Btn blue" @click="editarJugador(jugador.id)">
             <svg class="svg" viewBox="0 0 512 512">
@@ -291,31 +291,6 @@ body {
   transition: all 0.48s ease;
 }
 
-.content::before {
-  top: -4%;
-  width: 90%;
-  height: 90%;
-  background: #E3F2FD;
-}
-
-.content::after {
-  top: -8%;
-  width: 80%;
-  height: 80%;
-  background: #F4F8FB;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.card:hover .content::before {
-  rotate: -8deg;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .content > svg, .content > .para, .content > .btn-actions {
   position: relative;
   z-index: 1;
@@ -479,7 +454,7 @@ body {
   color: white;
   text-align: center;
   padding: 15px 0;
-  margin-top: auto;
+  margin-top: 101px;
   width: 100%;
   box-sizing: border-box;
 }
