@@ -128,7 +128,7 @@ if (localStorage.getItem('rol') !== 'admin') {
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://gestiontenis-1.onrender.com/api/jugadores');
+    const response = await axios.get('http://localhost:3000/api/jugadores');
     jugadores.value = response.data;
   } catch (error) {
     toast.error('Error al cargar jugadores: ' + error.message);
@@ -142,7 +142,7 @@ const editarJugador = (id) => {
 const eliminarJugador = async (id) => {
   if (confirm('¿Estás seguro de que deseas eliminar este jugador?')) {
     try {
-      await axios.delete(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`);
+      await axios.delete(`http://localhost:3000/api/jugadores/${id}`);
       jugadores.value = jugadores.value.filter(j => j.id !== id);
       toast.success('Jugador eliminado con éxito.');
     } catch (error) {

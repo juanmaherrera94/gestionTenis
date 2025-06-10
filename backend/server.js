@@ -24,8 +24,8 @@ app.use(express.json());
 const usuariosRoutes = require("./routes/usuarios");
 app.use("/api/usuarios", usuariosRoutes);
 
-const emparejamientosRoutes = require("./routes/emparejamientos");
-app.use("/api/emparejamientos", emparejamientosRoutes);
+/* const emparejamientosRoutes = require("./routes/emparejamientos");
+app.use("/api/emparejamientos", emparejamientosRoutes); */
 
 const reservasRoutes = require('./routes/reservas')
 app.use('/api/reservas', reservasRoutes)

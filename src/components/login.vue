@@ -62,7 +62,7 @@ const rol = ref("jugador"); // Fijo para registro
 
 const login = async () => {
   try {
-    const response = await axios.post("https://gestiontenis-1.onrender.com/api/usuarios/login", {
+    const response = await axios.post("http://localhost:3000/api/usuarios/login", {
       usuario: username.value,
       password: password.value,
     });
@@ -90,7 +90,7 @@ const registrar = async () => {
   }
 
   try {
-    await axios.post("https://gestiontenis-1.onrender.com/api/jugadores/registro", {
+    await axios.post("http://localhost:3000/api/jugadores/registro", {
       usuario: usuario.value,
       password: passwordFormulario.value,
       nombre: nombre.value,

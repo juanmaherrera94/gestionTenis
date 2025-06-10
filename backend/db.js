@@ -2,9 +2,9 @@ const mysql = require("mysql2/promise");
 
 let pool;
 
-if (process.env.DATABASE_URL) {
-  // Parsear la URL usando la clase URL para extraer los datos
-  const { URL } = require("url");
+/* if (process.env.DATABASE_URL) {/* 
+ */  // Parsear la URL usando la clase URL para extraer los datos
+  /* const { URL } = require("url");
   const dbUrl = new URL(process.env.DATABASE_URL);
 
   pool = mysql.createPool({
@@ -16,8 +16,8 @@ if (process.env.DATABASE_URL) {
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
-  });
-} else {
+  }) */
+/* } else { */
   // Configuración para desarrollo local
   pool = mysql.createPool({
     host: process.env.DB_HOST || "localhost",
@@ -28,6 +28,6 @@ if (process.env.DATABASE_URL) {
     connectionLimit: 10,
     queueLimit: 0,
   });
-}
+/* } */
 
 module.exports = pool;

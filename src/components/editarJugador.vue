@@ -55,7 +55,7 @@ const cargado = ref(false)
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`)
+    const response = await axios.get(`http://localhost:3000/api/jugadores/${id}`)
     const jugador = response.data
     nombre.value = jugador.nombre
     usuario.value = jugador.usuario
