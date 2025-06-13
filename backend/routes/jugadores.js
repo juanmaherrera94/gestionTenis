@@ -29,7 +29,6 @@ router.get("/:id", async (req, res) => {
 });
 
 // Crear un nuevo jugador
-
 router.post("/", async (req, res) => {
   try {
     const { nombre, usuario, password, division_id, rol } = req.body;

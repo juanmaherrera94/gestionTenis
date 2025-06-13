@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import admin from "../components/admin.vue"; 
+    import admin from "../components/admin.vue"; 
 </script>
 
 <style scoped>

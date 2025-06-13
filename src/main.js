@@ -13,7 +13,6 @@ app.use(router)
 
 app.mount('#app')
 
-
 app.use(Toastify, {
   autoClose: 3000,
 })

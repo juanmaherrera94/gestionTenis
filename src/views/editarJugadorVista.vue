@@ -3,8 +3,7 @@
 </template>
 
 <script setup>
-import EditarJugador from "../components/editarJugador.vue";
-
+    import EditarJugador from "../components/editarJugador.vue";
 </script>
 
 <style scoped></style>

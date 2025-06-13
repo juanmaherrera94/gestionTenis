@@ -4,6 +4,7 @@ import usuarioVista from '@/views/usuarioVista.vue'
 import adminVista from '@/views/adminVista.vue'
 import agregarJugador from '@/views/agregarJugadorVista.vue'
 import editarJugador from '@/views/editarJugadorVista.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -15,5 +16,4 @@ const router = createRouter({
   ]
 })
     
-
 export default router
