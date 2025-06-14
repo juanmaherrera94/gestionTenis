@@ -117,7 +117,7 @@
   const showPasswordForm = ref(false); // Controla la visibilidad del formulario para cambiar contraseña
 
   // Datos disponibles para el formulario de reserva
-  const horariosDisponibles = ref(["08:15:00", "10:30:00", "15:15:00", "17:30:00", "19:30:00"]);
+  const horariosDisponibles = ref(["09:15:00", "11:30:00", "16:15:00", "18:30:00", "20:30:00"]);
   const diasDisponibles = ref(["Viernes", "Sábado", "Domingo"]);
   const pistasDisponibles = ref([1, 2, 3]);
 
