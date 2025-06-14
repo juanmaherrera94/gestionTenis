@@ -163,7 +163,7 @@
   // Carga las reservas originales para la tabla superior
   const mostrarReservasOriginales = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/reservas");
+      const response = await axios.get("http://gestiontenis-1.onrender.com/api/reservas");
       reservasOriginalesParaTablaSuperior.value = response.data;
     } catch (error) {
       toast.error("Error al cargar reservas para la tabla superior: " + (error.response?.data?.message || error.message));
@@ -180,7 +180,7 @@
   // Obtiene todas las reservas pendientes desde la API
   const cargarTodasReservasPendientes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/reservas/pendientes");
+      const response = await axios.get("http://gestiontenis-1.onrender.com/api/reservas/pendientes");
       todasReservasPendientes.value = response.data;
     } catch (error) {
       toast.error("Error al cargar todas las solicitudes pendientes: " + (error.response?.data?.message || error.message));
@@ -191,7 +191,7 @@
   // Obtiene emparejamientos confirmados desde la API
   const cargarEmparejamientosConfirmados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/reservas/emparejamientos-confirmados");
+      const response = await axios.get("http://gestiontenis-1.onrender.com/api/reservas/emparejamientos-confirmados");
       emparejamientosConfirmados.value = response.data;
     } catch (error) {
       toast.error("Error al cargar emparejamientos confirmados: " + (error.response?.data?.message || error.message));
@@ -213,7 +213,7 @@
 
     try {
       // Envia la reserva al backend
-      const response = await axios.post("http://localhost:3000/api/reservas", {
+      const response = await axios.post("http://gestiontenis-1.onrender.com/api/reservas", {
         dia: diaSeleccionado.value,
         hora: horarioSeleccionado.value,
         usuario_id: currentUserId.value,
@@ -267,7 +267,7 @@
     }
     try {
       // Llama a la API para actualizar la contraseña
-      await axios.put(`http://localhost:3000/api/usuarios/${currentUserId.value}/contrasena`, {
+      await axios.put(`http://gestiontenis-1.onrender.com/api/usuarios/${currentUserId.value}/contrasena`, {
         actual: contrasenaActual.value,
         nueva: nuevaContrasena.value,
       });
