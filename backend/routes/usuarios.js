@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db"); // Este ya es con mysql2/promise
 
+// En el archivo del backend: routes/usuarios.js
+
 router.post("/login", async (req, res) => {
   const { usuario, password } = req.body;
   console.log("Datos recibidos:", usuario, password);
@@ -21,7 +23,15 @@ router.post("/login", async (req, res) => {
     }
 
     const user = results[0];
-    res.json({ user: { id: user.id, nombre: user.nombre, rol: user.rol } });
+    
+    res.json({ 
+      user: { 
+        id: user.id, 
+        nombre: user.nombre, 
+        rol: user.rol,
+        nombre_division: user.nombre_division || 'No asignada' 
+      } 
+    });
 
   } catch (err) {
     console.error("Error en login:", err);
