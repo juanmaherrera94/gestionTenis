@@ -1,7 +1,7 @@
 <template>
   <div class="vista-usuario-contenedor">
     <div class="content-card booking-form-card">
-      <h1>Bienvenido {{ nombreUsuario }}</h1> <h2>Perteneces a la división {{ division }}</h2>
+      <h1>Bienvenido {{ nombreUsuario }}</h1> <h3>Perteneces a la división {{ division }}</h3>
       <div class="form-group">
         <label for="horario">Selecciona un horario:</label>
         <select id="horario" v-model="horarioSeleccionado">
@@ -348,6 +348,12 @@
     margin-bottom: 30px;
   }
 
+  h3{
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
   .vista-usuario-contenedor {
     display: flex;
     flex-direction: column;
