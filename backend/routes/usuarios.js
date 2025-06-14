@@ -6,7 +6,12 @@ router.post("/login", async (req, res) => {
   const { usuario, password } = req.body;
   console.log("Datos recibidos:", usuario, password);
 
-  const query = "SELECT * FROM usuarios WHERE usuario = ? AND password = ?";
+  const query = `
+    SELECT u.id, u.nombre, u.rol, u.division_id, d.nombre as nombre_division
+    FROM usuarios u
+    LEFT JOIN divisiones d ON u.division_id = d.id
+    WHERE u.usuario = ? AND u.password = ?
+  `;
 
   try {
     const [results] = await db.query(query, [usuario, password]);

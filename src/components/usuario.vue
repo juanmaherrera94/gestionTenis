@@ -1,7 +1,7 @@
 <template>
   <div class="vista-usuario-contenedor">
     <div class="content-card booking-form-card">
-      <h1>Bienvenido {{ nombreUsuario }}</h1>
+      <h1>Bienvenido {{ nombreUsuario }}</h1> <h2>Perteneces a la división {{ division }}</h2>
       <div class="form-group">
         <label for="horario">Selecciona un horario:</label>
         <select id="horario" v-model="horarioSeleccionado">
@@ -110,9 +110,10 @@
   import { toast } from 'vue3-toastify';
 
   const router = useRouter();
-
+  const division = ref(""); // Se carga desde localStorage al montar el componente
   // Estado básico del componente: nombre e ID de usuario, y control para mostrar formulario de cambio de contraseña
   const nombreUsuario = ref(''); // Se carga desde localStorage al montar el componente
+
   const currentUserId = ref(null); // Se carga desde localStorage
   const showPasswordForm = ref(false); // Controla la visibilidad del formulario para cambiar contraseña
 
@@ -144,21 +145,27 @@
     // Recupera nombre e ID del usuario guardados localmente
     const nombreGuardado = localStorage.getItem('nombreUsuario');
     const idGuardado = localStorage.getItem('userId');
-
+    const divisionGuardada = localStorage.getItem('nombreDivision');
     // Si no hay datos, redirige al login
-    if (nombreGuardado && idGuardado) {
-      nombreUsuario.value = nombreGuardado;
-      currentUserId.value = parseInt(idGuardado, 10);
-    } else {
-      toast.error("Error de autenticación. Por favor, inicia sesión de nuevo.");
-      router.push("/");
-      return;
+  if (nombreGuardado && idGuardado) {
+    nombreUsuario.value = nombreGuardado;
+    currentUserId.value = parseInt(idGuardado, 10);
+    
+    // Si se encontró una división guardada, la asignamos a nuestra variable 'division'
+    if (divisionGuardada) {
+      division.value = divisionGuardada;
     }
+    
+  } else {
+    toast.error("Error de autenticación. Por favor, inicia sesión de nuevo.");
+    router.push("/");
+    return;
+  }
 
-    // Carga las reservas y los datos para mostrar la tabla
-    await mostrarReservasOriginales();
-    await cargarDatosParaTablaHorarios();
-  });
+  // Carga las reservas y los datos para mostrar la tabla
+  await mostrarReservasOriginales();
+  await cargarDatosParaTablaHorarios();
+});
 
   // Carga las reservas originales para la tabla superior
   const mostrarReservasOriginales = async () => {

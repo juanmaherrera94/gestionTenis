@@ -65,6 +65,7 @@
       localStorage.setItem("nombreUsuario", user.nombre);
       localStorage.setItem("userId", user.id);
       localStorage.setItem("rol", user.rol);
+      localStorage.setItem("nombreDivision", user.nombre_division); 
 
       // Redirigir según rol del usuario
       if (user.rol === "admin") {
