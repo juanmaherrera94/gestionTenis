@@ -33,6 +33,7 @@
       </div>
 
       <button class="button-submit">Actualizar</button>
+       <button @click="volver" class="button-submit">Volver</button>
     </form>
   </div>
 </template>
@@ -51,7 +52,13 @@
   const usuario = ref('')
   const division_id = ref('')
   const password = ref('')
-  const cargado = ref(false)                      
+  const cargado = ref(false)         
+  
+  
+  //Boton volver
+  const volver = () => {
+    router.push("/admin")
+  }
 
   // Al montar el componente, carga datos del jugador
   onMounted(async () => {

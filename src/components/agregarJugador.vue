@@ -32,6 +32,7 @@
       </div>
 
       <button type="submit" class="button-submit">Añadir</button>
+      <button @click="volver" class="button-submit">Volver</button>
     </form>
   </div>
 </template>
@@ -48,6 +49,12 @@
   const division_id = ref('');
 
   const router = useRouter();
+
+  //Boton volver
+  const volver = () => {
+
+    router.push("/admin")
+  }
 
   // Función para enviar datos y crear jugador
   const agregarJugador = async () => {
