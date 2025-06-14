@@ -64,7 +64,7 @@
   onMounted(async () => {
     try {
       // Petición para obtener los datos del jugador por id
-      const response = await axios.get(`http://gestiontenis-1.onrender.com/api/jugadores/${id}`)
+      const response = await axios.get(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`)
       const jugador = response.data
 
       // Asigna los datos recibidos a las variables reactivas
@@ -85,7 +85,7 @@
   const editarJugador = async () => {
     try {
       // Petición PUT para actualizar los datos del jugador
-      await axios.put(`http://gestiontenis-1.onrender.com/api/jugadores/${id}`, {
+      await axios.put(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`, {
         nombre: nombre.value,
         usuario: usuario.value,
         password: password.value,

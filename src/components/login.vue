@@ -54,7 +54,7 @@
   const login = async () => {
     try {
       // Petición al backend para validar usuario y contraseña
-      const response = await axios.post("http://gestiontenis-1.onrender.com/api/usuarios/login", {
+      const response = await axios.post("https://gestiontenis-1.onrender.com/api/usuarios/login", {
         usuario: username.value,
         password: password.value,
       });
@@ -88,7 +88,7 @@
 
     try {
       // Petición al backend para registrar nuevo usuario
-      await axios.post("http://gestiontenis-1.onrender.com/api/jugadores/registro", {
+      await axios.post("https://gestiontenis-1.onrender.com/api/jugadores/registro", {
         usuario: usuario.value,
         password: passwordFormulario.value,
         nombre: nombre.value,

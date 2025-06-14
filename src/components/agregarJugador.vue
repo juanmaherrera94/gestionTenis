@@ -66,7 +66,7 @@
 
     try {
       // Llamada API para añadir jugador
-      await axios.post("http://gestiontenis-1.onrender.com/api/jugadores", {
+      await axios.post("https://gestiontenis-1.onrender.com/api/jugadores", {
         nombre: nombre.value,
         usuario: usuario.value,
         password: password.value,
