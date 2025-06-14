@@ -32,6 +32,7 @@
       </div>
 
       <button type="submit" class="button-submit">Añadir</button>
+      <button @click="volver" class="button-submit">Volver</button>
     </form>
   </div>
 </template>
@@ -49,6 +50,12 @@
 
   const router = useRouter();
 
+  //Boton volver
+  const volver = () => {
+
+    router.push("/admin")
+  }
+
   // Función para enviar datos y crear jugador
   const agregarJugador = async () => {
     // Validar campos vacíos
@@ -59,7 +66,7 @@
 
     try {
       // Llamada API para añadir jugador
-      await axios.post("http://localhost:3000/api/jugadores", {
+      await axios.post("https://gestiontenis-1.onrender.com/api/jugadores", {
         nombre: nombre.value,
         usuario: usuario.value,
         password: password.value,

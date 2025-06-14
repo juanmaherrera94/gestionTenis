@@ -33,6 +33,7 @@
       </div>
 
       <button class="button-submit">Actualizar</button>
+       <button @click="volver" class="button-submit">Volver</button>
     </form>
   </div>
 </template>
@@ -51,13 +52,19 @@
   const usuario = ref('')
   const division_id = ref('')
   const password = ref('')
-  const cargado = ref(false)                      
+  const cargado = ref(false)         
+  
+  
+  //Boton volver
+  const volver = () => {
+    router.push("/admin")
+  }
 
   // Al montar el componente, carga datos del jugador
   onMounted(async () => {
     try {
       // Petición para obtener los datos del jugador por id
-      const response = await axios.get(`http://localhost:3000/api/jugadores/${id}`)
+      const response = await axios.get(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`)
       const jugador = response.data
 
       // Asigna los datos recibidos a las variables reactivas
@@ -78,7 +85,7 @@
   const editarJugador = async () => {
     try {
       // Petición PUT para actualizar los datos del jugador
-      await axios.put(`http://localhost:3000/api/jugadores/${id}`, {
+      await axios.put(`https://gestiontenis-1.onrender.com/api/jugadores/${id}`, {
         nombre: nombre.value,
         usuario: usuario.value,
         password: password.value,
